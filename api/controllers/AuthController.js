@@ -38,6 +38,17 @@ async function signup(req, res) {
   params.password = hashPassword
   var newUser = await User.create(params).fetch()
 
+  // Create "general" folder
+  var folderParams = {
+    "name": "General",
+    "slug": "general",
+    "owner": newUser.id,
+    "is_public": 1
+  }
+
+  var newFolder = await Folder.create(folderParams).fetch()
+  newUser.folders = [newFolder]
+
   newUser.token = await sails.helpers.createToken(newUser)
   res.ok(newUser)
 

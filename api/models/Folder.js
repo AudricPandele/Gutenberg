@@ -23,10 +23,6 @@ module.exports = {
         type: 'boolean',
         required: true,
     },
-    created_at: {
-        type: 'string',
-        required: true,
-    },
     articles: {
       collection: 'article',
       via: 'folder'
