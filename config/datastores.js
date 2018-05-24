@@ -49,7 +49,7 @@ module.exports.datastores = {
     *                                                                          *
     ***************************************************************************/
      adapter: 'sails-mysql',
-     url: 'mysql://root:root@localhost:3306/gutenberg-api',
+     url: 'mysql://root:@localhost:3306/gutenberg-api',
 
   },
 

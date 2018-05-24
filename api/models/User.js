@@ -50,10 +50,5 @@ module.exports = {
       via: 'user'
     },
 
-  },
-
-  beforeCreate: function (values, next) {
-      SecurityService.hashPassword(values);
-      next();
   }
 };
