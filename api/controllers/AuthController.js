@@ -47,6 +47,8 @@ async function signup(req, res) {
   }
 
   var newFolder = await Folder.create(folderParams).fetch()
+
+  // Add general folder to user object
   newUser.folders = [newFolder]
 
   newUser.token = await sails.helpers.createToken(newUser)

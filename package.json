@@ -15,11 +15,13 @@
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
+    "read-art": "^0.5.4",
     "sails": "^1.0.2",
     "sails-hook-grunt": "^3.0.2",
     "sails-hook-orm": "^2.0.0-16",
     "sails-hook-sockets": "^1.4.0",
-    "sails-mysql": "^1.0.0"
+    "sails-mysql": "^1.0.0",
+    "unfluff": "^3.0.1"
   },
   "devDependencies": {
     "@sailshq/eslint": "^4.19.3"
