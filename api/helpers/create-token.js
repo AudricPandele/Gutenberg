@@ -28,10 +28,18 @@ module.exports = {
 
 
   fn: async function (inputs, exits) {
-    var token = jwt.sign({ user : inputs.user }, 'shhhhh')
-
-    // All done.
-    return exits.success(token);
+    jwt.sign({
+        user : inputs.user
+      },
+      sails.config.jwtSettings.secret,
+      {
+        algorithm: 'HS256',
+      },
+      function(err, token) {
+        return exits.success(token);
+        console.log(token, err)
+      }
+    )
 
   }
 

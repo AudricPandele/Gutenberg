@@ -8,7 +8,7 @@ var ExtractJwt = require('passport-jwt').ExtractJwt;
 
 var EXPIRES_IN = '3d';
 var SECRET = process.env.tokenSecret || "4ukI0uIVnB3iI1yxj646fVXSE3ZVk4doZgz6fTbNg7jO41EAtl20J5F7Trtwe7OM";
-var ALGORITHM = 'RS256';
+var ALGORITHM = 'HS256';
 
 module.exports.jwtSettings = {
     expiresIn: EXPIRES_IN,

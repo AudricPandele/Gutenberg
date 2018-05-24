@@ -24,12 +24,10 @@ module.exports = {
         type: 'string',
     },
     notes: {
-      model: 'note',
-      via: 'article'
+      model: 'note'
     },
     likes: {
-      model: 'like',
-      via: 'article'
+      model: 'like'
     },
     folder:{
       model: 'folder'
