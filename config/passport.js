@@ -39,13 +39,13 @@ function _onLocalStrategyAuth(email, password, next) {
     User.findOne(
         {
             or: [
-                {name: email},
+                {username: email},
                 {email: email}
             ]
         })
         .exec(function (error, user) {
             if (error) return next(error, false, {});
-            if (!user || !SecurityService.comparePassword(password, user)) {
+            if (!user || !sails.helpers.comparePassword(password, user)) {
                 return next(null, false, {})
             }
             return next(null, user, {});
