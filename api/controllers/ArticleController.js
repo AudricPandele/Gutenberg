@@ -10,6 +10,12 @@
  	res.ok(articles)
  }
 
+ async function getArticlesBySlug(req, res) {
+   const folder = await Folder.find({slug: req.params.folder_slug}).where({owner: req.params.user_id})
+   const articles = await Article.find({ folder: folder.id })
+   res.ok(articles)
+ }
+
  async function createArticle(req, res) {
   var extractor = require('unfluff')
  	var read = require('read-art')
@@ -49,6 +55,7 @@
  }
 
 module.exports = {
+  showBySlug: (req, res, next) => { getArticlesBySlug(req, res).catch(next) },
   show: (req, res, next) => { getArticles(req, res).catch(next) },
   create: (req, res, next) => { createArticle(req, res).catch(next) },
 };
