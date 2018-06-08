@@ -38,9 +38,16 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
+  // auth
   'post /auth/signin' :'AuthController.signin',
   'post /auth/signup' :'AuthController.signup',
 
+
+  // get user's folders
+  'get /user/:username/folders' : 'FolderController.show',
+  // post contributor on a folder
+  'post /user/:username/folders/:folder_slug/contributors' : 'FolderController.addContributor',
+  // get and post articles
   'get /user/:username/folders/:folder_slug/articles' : 'ArticleController.show',
   'post /user/:username/folders/:folder_slug/articles' : 'ArticleController.create',
 

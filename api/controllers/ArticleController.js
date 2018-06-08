@@ -69,12 +69,7 @@
   })
  }
 
- async function userAddArticle (req, res) {
-
- }
-
 module.exports = {
-  // showBySlug: (req, res, next) => { getArticlesBySlug(req, res).catch(next) },
   show: (req, res, next) => { getArticlesBySlug(req, res).catch(next) },
   create: (req, res, next) => { createArticle(req, res).catch(next) },
 };
