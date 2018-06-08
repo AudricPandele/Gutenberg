@@ -41,9 +41,8 @@ module.exports.routes = {
   'post /auth/signin' :'AuthController.signin',
   'post /auth/signup' :'AuthController.signup',
 
-  'get /user/:user_id/folders/:folder_slug/articles' : 'FolderController.showBySlug',
-  // 'get /user/:user_id/folders/:folder_id/articles' : 'ArticleController.show',
-  'post /user/:user_id/folders/:folder_id/articles' : 'ArticleController.create',
+  'get /user/:username/folders/:folder_slug/articles' : 'ArticleController.show',
+  'post /user/:username/folders/:folder_slug/articles' : 'ArticleController.create',
 
   //  ╔═╗╔═╗╦  ╔═╗╔╗╔╔╦╗╔═╗╔═╗╦╔╗╔╔╦╗╔═╗
   //  ╠═╣╠═╝║  ║╣ ║║║ ║║╠═╝║ ║║║║║ ║ ╚═╗

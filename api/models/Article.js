@@ -16,6 +16,7 @@ module.exports = {
     },
     text: {
         type: 'string',
+        columnType: 'text',
     },
     link: {
         type: 'string',
