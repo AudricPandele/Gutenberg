@@ -9,6 +9,16 @@
    let user = await User.findOne({username: req.params.username})
    if (user) {
      let folder = await Folder.find({owner: user.id})
+     res.ok(folder)
+   }else{
+     res.ok([])
+   }
+ }
+
+ async function getFolderBySlug(req, res) {
+   let user = await User.findOne({username: req.params.username})
+   if (user) {
+     let folder = await Folder.findOne({slug: req.params.folder_slug, owner: user.id})
                               .populate('contributors')
                               .populate('owner')
      res.ok(folder)
@@ -33,5 +43,6 @@
 
  module.exports = {
    show: (req, res, next) => { getFolderByUsername(req, res).catch(next) },
+   showBySlug: (req, res, next) => { getFolderBySlug(req, res).catch(next) },
    addContributor: (req, res, next) => { createContributor(req, res).catch(next) },
  };

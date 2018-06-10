@@ -45,6 +45,8 @@ module.exports.routes = {
 
   // get user's folders
   'get /user/:username/folders' : 'FolderController.show',
+  // get user folder by slug
+  'get /user/:username/folders/:folder_slug' : 'FolderController.showBySlug',
   // post contributor on a folder
   'post /user/:username/folders/:folder_slug/contributors' : 'FolderController.addContributor',
   // get and post articles
